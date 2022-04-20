@@ -3,7 +3,7 @@
 A web app to view the videos posted by  a youtube channel.
 
 # Installation instruction
-After cloning the repository.
+Clone the repository.
 
 ``` 
 git clone  https://github.com/Ravineesh/YouTubeStats.git 
