@@ -2,7 +2,6 @@
 
 A web app to view the videos posted by  a youtube channel.
 
-The app is deployed on streamlit share:
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/ravineesh/youtubestats/main/channel_stats.py)
 
 
