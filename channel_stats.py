@@ -23,8 +23,7 @@ st.markdown(""" <style>
 
 
 with st.form('youTube_channel_id'):
-    youTubeChannelID = st.text_input(label='YouTube Channel ID', placeholder='Paste the youtube channel id here...for '
-                                                                             'eg. UCkS7Vxu4PjM99w0Is6idjcg')
+    youTubeChannelID = st.text_input(label='YouTube Channel ID', placeholder='Paste the youtube channel id here...for eg. UCkS7Vxu4PjM99w0Is6idjcg')
     st.form_submit_button(label='Get Channel Stats')
 
 if youTubeChannelID == '':
