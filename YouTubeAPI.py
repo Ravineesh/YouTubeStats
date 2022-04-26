@@ -41,17 +41,16 @@ def get_videos_stats(video_id):
     """
     stats = []
     st.markdown(""" ##### Preparing required data.... """)
-    my_bar = st.progress(0)
-    if len(video_id) < 101:
-        value = 101 - len(video_id)
-    else:
-        value = 0
+    my_bar = st.progress(1)
     for i in range(0, len(video_id)):
         res = youtube.videos().list(id=video_id[i],
                                     part='statistics').execute()
         stats += res['items']
-        if (value + i) <= 100:
-            my_bar.progress(value + i)
+        value_ = (i / len(video_id))
+        my_bar.progress(value_)
+        if i == len(video_id) - 1:
+            diff = 1 - value_
+            my_bar.progress(value_ + diff)
 
     return stats
 
@@ -63,16 +62,11 @@ def video_table(list_of_videos):
     :return : list of videos
     """
     st.markdown(""" ##### Getting videos .... """)
-    my_bar = st.progress(0)
-    i = 0
-    if len(list_of_videos) < 101:
-        value = 101 - len(list_of_videos)
-    else:
-        value = 0
+    my_bar = st.progress(1)
+    i = 1
     for video in list_of_videos:
-        if (value + i) <= 100:
-            my_bar.progress(value + i)
-            i += 1
+        my_bar.progress(i/len(list_of_videos))
+        i += 1
         config.channel_id.append(video['snippet']['channelId'])
         config.channel_name.append(video['snippet']['channelTitle'])
         config.video_id.append(video['snippet']['resourceId']['videoId'])
@@ -89,16 +83,11 @@ def stat_table(video_stats):
     :return : no value
     """
     st.markdown(""" ##### Generating statistics...  """)
-    my_bar = st.progress(0)
-    i = 0
-    if len(video_stats) < 101:
-        value = 101 - len(video_stats)
-    else:
-        value = 0
+    my_bar = st.progress(1)
+    i = 1
     for stat in video_stats:
-        if (value + i) <= 100:
-            my_bar.progress(value + i)
-            i += 1
+        my_bar.progress(i / len(video_stats))
+        i += 1
         if util.key_in_dict_and_not_none(stat['statistics'], "viewCount"):
             config.view_count.append(stat['statistics']['viewCount'])
         else:
