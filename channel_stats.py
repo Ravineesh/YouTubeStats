@@ -15,15 +15,16 @@ with st.expander('About this app'):
 
 
 # hide the sidebar
-# st.markdown(""" <style>
-#                 #MainMenu {visibility: hidden;}
-#                 footer {visibility: hidden;}
-#                 </style> """,
-#             unsafe_allow_html=True)
+st.markdown(""" <style>
+                #MainMenu {visibility: hidden;}
+                footer {visibility: hidden;}
+                </style> """,
+            unsafe_allow_html=True)
 
 
 with st.form('youTube_channel_id'):
-    youTubeChannelID = st.text_input(label='YouTube Channel ID', placeholder='Paste the youtube channel id here...')
+    youTubeChannelID = st.text_input(label='YouTube Channel ID', placeholder='Paste the youtube channel id here...for '
+                                                                             'eg. UCkS7Vxu4PjM99w0Is6idjcg')
     st.form_submit_button(label='Get Channel Stats')
 
 if youTubeChannelID == '':
