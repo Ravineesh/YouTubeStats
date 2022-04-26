@@ -5,9 +5,22 @@ import config
 import plotly.express as px
 from numerize import numerize
 
+# set the layout and title of app
 st.set_page_config(layout='wide')
 st.title('YouTube Channel Data')
-st.subheader(('With this app you can view the list of videos posted by a YouTube channel'))
+
+with st.expander('About this app'):
+    st.write('This app allows user to download the list of videos posted by YouTube Channel using YouTube API.')
+    st.image('https://d15-a.sdn.cz/d_15/c_img_F_G/8YsBZzN.jpeg?fl=cro,0,0,798,450%7Cres,1024,,1%7Cwebp,75', width=100)
+
+
+# hide the sidebar
+# st.markdown(""" <style>
+#                 #MainMenu {visibility: hidden;}
+#                 footer {visibility: hidden;}
+#                 </style> """,
+#             unsafe_allow_html=True)
+
 
 with st.form('youTube_channel_id'):
     youTubeChannelID = st.text_input(label='YouTube Channel ID', placeholder='Paste the youtube channel id here...')
