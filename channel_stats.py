@@ -5,6 +5,7 @@ import config
 import plotly.express as px
 from numerize import numerize
 import util
+from streamlit_lottie import st_lottie
 
 # set the layout of the app
 st.set_page_config(layout='wide')
