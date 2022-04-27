@@ -20,7 +20,7 @@ st_lottie(load_animation, height=200)
 st.title('YouTube Channel Data')
 
 with st.expander('About this app'):
-    st.write('This is data collection which allows users to download the list of videos posted by YouTube Channel '
+    st.write('This is a data collection app which allows users to download the list of videos posted by YouTube Channel '
              'using YouTube API.')
 
 
