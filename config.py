@@ -3,6 +3,9 @@ video_table = ['channel_id', 'channel_name', 'video_id', 'type', 'video_title', 
                'view_count', 'like_count', 'dislike_count', 'favoriteCount', 'commentCount',
                'publishedAt']
 
+lottie_animation_url = 'https://assets8.lottiefiles.com/private_files/lf30_bntlaz7t.json'
+
+
 # list of columns required
 channel_id = []
 channel_name = []

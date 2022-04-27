@@ -4,14 +4,23 @@ import YouTubeAPI as youTube
 import config
 import plotly.express as px
 from numerize import numerize
+import util
 
-# set the layout and title of app
+# set the layout of the app
 st.set_page_config(layout='wide')
+
+
+# load animation
+load_animation = util.load_lottieurl(config.lottie_animation_url)
+st_lottie(load_animation, height=200)
+
+
+# set the title of the app
 st.title('YouTube Channel Data')
 
 with st.expander('About this app'):
-    st.write('This app allows user to download the list of videos posted by YouTube Channel using YouTube API.')
-    st.image('https://d15-a.sdn.cz/d_15/c_img_F_G/8YsBZzN.jpeg?fl=cro,0,0,798,450%7Cres,1024,,1%7Cwebp,75', width=100)
+    st.write('This is data collection which allows users to download the list of videos posted by YouTube Channel '
+             'using YouTube API.')
 
 
 # hide the sidebar
@@ -23,8 +32,10 @@ st.markdown(""" <style>
 
 
 with st.form('youTube_channel_id'):
-    youTubeChannelID = st.text_input(label='YouTube Channel ID', placeholder='Paste the youtube channel id here...for eg. UCkS7Vxu4PjM99w0Is6idjcg')
-    st.form_submit_button(label='Get Channel Stats')
+        youTubeChannelID = st.text_input(label='YouTube Channel ID', placeholder='Paste the youtube channel id here...for '
+                                                                             'eg. UCSNeZleDn9c74yQc-EKnVTA',
+                                     help="To test the app you can use channel id UCSNeZleDn9c74yQc-EKnVTA")
+        st.form_submit_button(label='Get Channel Stats')
 
 if youTubeChannelID == '':
     st.stop()
